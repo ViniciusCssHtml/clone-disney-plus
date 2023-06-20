@@ -5,6 +5,7 @@
 @use "available-devices";
 @use "faq";
 @use "footer";
+@use "header";
 @font-face {
   font-family: Avenir;
   src: url("/assets/fonts/Avenir-Regular.woff2");
@@ -74,11 +75,35 @@ body {
   height: 60px;
   font-size: 18px;
   color: variaveis.$corTextoSecundario;
-  background-color: #7828ff;
+  background-color: variaveis.$corFundoButtonPrincipal;
   text-transform: uppercase;
   border-radius: 4px;
-  margin-top: 2vw;
-  margin-bottom: 8px;
+  text-decoration: none;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 1px solid variaveis.$corFundoButtonPrincipal;
+  &:hover {
+    background-color: lighten(variaveis.$corFundoButtonPrincipal, 3%);
+  }
+
+  &--secundary {
+    background-color: variaveis.$corFundoButtonSecundario;
+    border-color: variaveis.$corFundoButtonSecundario;
+
+    &:hover {
+      background-color: lighten(variaveis.$corFundoButtonSecundario, 10%);
+    }
+  }
+
+  &--dark {
+    background-color: rgba(variaveis.$cordeFundoButtonDark, 0.8);
+    border-color: variaveis.$corTextoSecundario;
+    &:hover {
+      background-color: variaveis.$corTextoSecundario;
+      color: variaveis.$cordeFundoButtonDark;
+    }
+  }
 }
 
 .image-text-section {
